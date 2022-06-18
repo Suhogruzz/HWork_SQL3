@@ -1,5 +1,6 @@
-# HWork_SQL3
-'''sql
+![](https://github.com/Suhogruzz/HWork_SQL3/blob/main/SQL_HWork3.jpg)
+
+```sql
  CREATE TABLE IF NOT EXISTS performer (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(100) NOT NULL
