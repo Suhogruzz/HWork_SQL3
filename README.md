@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS collection_track (
 	collection_id INTEGER REFERENCES collections(id) NOT NULL 
 );
 ```
-## Изменить задание БД из второго задания
+## Изменить БД из второго задания
 ```sql
 ALTER TABLE performer DROP COLUMN id_genre;
 
@@ -72,5 +72,14 @@ CREATE TABLE IF NOT EXISTS performer_album (
 CREATE TABLE IF NOT EXISTS collection_track (
 	track_id INTEGER REFERENCES track(id) NOT NULL,
 	collection_id INTEGER REFERENCES collections(id) NOT NULL 
+);
+```
+## Доп. задание
+```sql
+CREATE TABLE IF NOT EXISTS employee(
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	department VARCHAR(50) NOT NULL,
+	supervisor_id INTEGER REFERENCES employee(id)
 );
 ```
