@@ -1,5 +1,7 @@
 ![](https://github.com/Suhogruzz/HWork_SQL3/blob/main/SQL_HWork3.jpg)
 
+## Создать новую БД
+
 ```sql
  CREATE TABLE IF NOT EXISTS performer (
 	id SERIAL PRIMARY KEY,
@@ -43,3 +45,32 @@ CREATE TABLE IF NOT EXISTS performer_album (
 CREATE TABLE IF NOT EXISTS collection_track (
 	track_id INTEGER REFERENCES track(id) NOT NULL,
 	collection_id INTEGER REFERENCES collections(id) NOT NULL 
+);
+```
+## Изменить задание БД из второго задания
+```sql
+ALTER TABLE performer DROP COLUMN id_genre;
+
+ALTER TABLE album DROP COLUMN id_performer;
+
+CREATE TABLE IF NOT EXISTS collections (
+	id SERIAL PRIMARY KEY,
+	collection_name VARCHAR(100) NOT NULL,
+	collection_year NUMERIC(4) NOT NULL 
+);
+
+CREATE TABLE IF NOT EXISTS genre_performer (
+	performer_id INTEGER REFERENCES performer(id) NOT NULL,
+	genre_id INTEGER REFERENCES genre(id) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS performer_album (
+	performer_id INTEGER REFERENCES performer(id) NOT NULL,
+	album_id INTEGER REFERENCES album(id) NOT NULL 
+);
+
+CREATE TABLE IF NOT EXISTS collection_track (
+	track_id INTEGER REFERENCES track(id) NOT NULL,
+	collection_id INTEGER REFERENCES collections(id) NOT NULL 
+);
+```
